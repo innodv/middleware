@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func CORS(next http.Handler, bypassOnOptions bool) http.Handler {
+func CORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
 		w.Header().Set("access-control-allow-credentials", "true")
