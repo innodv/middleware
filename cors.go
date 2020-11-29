@@ -22,7 +22,7 @@ func CORS(next http.Handler) http.Handler {
 			ac = "*"
 		}
 		w.Header().Set("access-control-allow-headers", ac)
-		if r.Method == "OPTIONS" && bypassOnOptions {
+		if r.Method == "OPTIONS" {
 			return
 		}
 		next.ServeHTTP(w, r)
